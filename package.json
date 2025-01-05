@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --import=tsx --no-warnings src/index.ts",
+    "start": "node --env-file=.env  --import=tsx --no-warnings src/index.ts",
     "db:chroma": "docker run -p 8000:8000 chromadb/chroma",
     "db:qdrant": "docker run -p 6333:6333 qdrant/qdrant",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,8 @@
     "@qdrant/js-client-rest": "^1.12.0",
     "chromadb": "^1.10.0",
     "chromadb-default-embed": "^2.13.2",
-    "ollama": "^0.5.11"
+    "ollama": "^0.5.11",
+    "openai": "^4.77.3"
   },
   "devDependencies": {
     "tsx": "^4.19.2",
