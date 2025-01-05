@@ -1,3 +1,4 @@
+//TODO: there's something wront with the code, sometimes it works, sometimes it doesn't, that's probably because of the embbedding creations . (sometimes the 2nd document is hihger in the search)
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { Ollama } from 'ollama';
 function sleep(ms: number): Promise<void> {
