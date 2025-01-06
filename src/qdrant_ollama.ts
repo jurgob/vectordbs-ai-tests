@@ -35,7 +35,7 @@ export async function test() {
         return await qdrant.createCollection(COLLECTION_NAME,{
             vectors: {
               size: 4096, // Match the vector size of Mistral embeddings
-              distance: 'Dot',
+              distance: 'Cosine',
             },
           });
     });
