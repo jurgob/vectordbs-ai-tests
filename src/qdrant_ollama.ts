@@ -4,7 +4,8 @@ import { Ollama } from 'ollama';
 function sleep(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
-const MODEL_NAME = "mistral:latest";
+const MODEL_NAME = "llama3.2";
+const VECTOR_SIZE = 3072;
 const COLLECTION_NAME = "test_collection";
 
 // Initialize Ollama client
@@ -34,7 +35,7 @@ export async function test() {
     await qdrant.getCollection(COLLECTION_NAME).catch(async () => {
         return await qdrant.createCollection(COLLECTION_NAME,{
             vectors: {
-              size: 4096, // Match the vector size of Mistral embeddings
+              size: VECTOR_SIZE, // Match the vector size of Mistral embeddings
               distance: 'Cosine',
             },
           });
